@@ -35,7 +35,7 @@ module Fog
 
         # Cease parsing and override response.body with parsed data
         data_stream.finish
-        response.body = response.data
+        response.body = parser.response
         response
       end
     end
