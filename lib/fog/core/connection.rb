@@ -22,6 +22,11 @@ module Fog
         end
       end
 
+      if Fog.capture_request then
+        Fog.captured_params = params
+        raise "Request Captured! params:#{params.inspect}"
+      end
+
       response = @excon.request(params, &block)
 
       if parser
