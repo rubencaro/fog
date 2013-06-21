@@ -45,3 +45,12 @@ require 'fog/zerigo'
 require 'fog/cloudsigma'
 require 'fog/openvz'
 
+module Fog
+  @@capture_request = false
+  @@captured_params = nil
+
+  def capture_request; @@capture_request end
+  def capture_request=(value); @@capture_request = value end
+  def captured_params; @@captured_params end
+  def captured_params=(value); @@captured_params = value end
+end
